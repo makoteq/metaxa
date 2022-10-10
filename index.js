@@ -5,9 +5,6 @@ import projector from "./lib/engine.js";
 import path from "path";
 import chalk from "chalk";
 let args = process.argv.slice(2);
-// const usage = `Options:
-// start <file> <delay>    start reading text from path specified in <file>,change time between words in <delay>    
-// `;
 
 const usage = `
 Command : 
