@@ -1,0 +1,22 @@
+{
+  "name": "metaxa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "bin": "index.js",
+  "author": "makoteq",
+  "repository": "https://github.com/makoteq/metaxa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makoteq/metaxa/issues"
+  },
+  "dependencies": {
+    "chalk": "^5.1.0",
+    "figlet": "^1.5.2"
+  }
+}
