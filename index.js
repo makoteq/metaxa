@@ -39,7 +39,9 @@ switch (args[0]) {
     if (args[1] && path.extname(args[1]) == ".txt") {
       fs.readFile(args[1], "utf8", function (err, data) {
         if (err) {
-          throw err;
+          console.log(chalk.white.bgRed.bold("\nSomething went wrong..."))
+          console.log(`\n${chalk.yellowBright.bold('Error')}: ${chalk.red(err.message)}`);
+          return;
         }
         projector(
           data,
@@ -48,7 +50,7 @@ switch (args[0]) {
             : 500
         );
       });
-    } else console.log("You need to specify proper path");
+    } else console.log(`\n${chalk.yellowBright.bold('Error')}: ${chalk.red("You need to specify proper path")}`);
 
     break;
 }
