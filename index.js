@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as fs from "fs";
 import show from "./lib/banner.js";
 import projector from "./lib/engine.js";
