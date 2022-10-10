@@ -5,13 +5,27 @@ import projector from "./lib/engine.js";
 import path from "path";
 import chalk from "chalk";
 let args = process.argv.slice(2);
-const usage = `Options:
-start <file> <delay>    start reading text from path specified in <file>,change time between words in <delay>    
-`;
+// const usage = `Options:
+// start <file> <delay>    start reading text from path specified in <file>,change time between words in <delay>    
+// `;
+
+const usage = `
+Command : 
+  start <file_path> [<delay>]
+    Show text from file in <file_path> with delay between words in <delay> (default 100ms)
+
+Argument Details :
+  file_path : full or absolute path of file [mandatory*]
+  delay : delay between two words in milliseconds
+
+Options :
+  -h, --help : show help
+  -v, --version : show version
+`
 
 switch (args[0]) {
   default:
-    show("METAXA", "type - metaxa start <path> to begin reading");
+    show("METAXA", "Run - metaxa start <path> to begin reading\nIf you want to know more, explore help section by\nmetaxa -h or metaxa --help");
 
     break;
   case "-help":
