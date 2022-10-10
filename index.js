@@ -9,7 +9,7 @@ let args = process.argv.slice(2);
 const usage = `
 Command : 
   start <file_path> [<delay>]
-    Show text from file in <file_path> with delay between words in <delay> (default 100ms)
+    Show text from file in <file_path> with delay between words in <delay> (default 500ms)
 
 Argument Details :
   file_path : full or absolute path of file [mandatory*]
