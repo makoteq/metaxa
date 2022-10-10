@@ -14,10 +14,12 @@ switch (args[0]) {
     show("METAXA", "type - metaxa start <path> to begin reading");
 
     break;
-  case ("-help", "-h"):
+  case "-help":
+  case "-h":
     console.log(chalk.cyan(usage));
     break;
-  case ("-version", "-v"):
+  case "-version":
+  case "-v":
     let rawdata = fs.readFileSync('./package.json');
     let pjson = JSON.parse(rawdata);
     console.log(pjson.version);
