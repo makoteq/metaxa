@@ -13,7 +13,7 @@ metaxa <path> <delay>
 ```
 **or**
 ``` bash
-npx metaxa
+npx metaxa <path> <delay>
 ```
 ## :raised_hands: Contributing 
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)
