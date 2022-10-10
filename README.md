@@ -15,6 +15,8 @@ metaxa <path> <delay>
 ``` bash
 npx metaxa <path> <delay>
 ```
+where **<path>** is a path to your .txt file with text to read
+and **<delay>** is how much milliseconds are between words
 ## :raised_hands: Contributing 
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)
 
