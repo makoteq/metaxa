@@ -11,6 +11,10 @@ npm i -g metaxa
 ``` bash
 metaxa <path> <delay>
 ```
+**or**
+``` bash
+npx metaxa
+```
 ## :raised_hands: Contributing 
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)
 
