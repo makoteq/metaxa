@@ -71,7 +71,7 @@ git push -u origin <your_branch_name>
 **15.** Click on `Create Pull Request`.
 
 
-**16.** Woohoo! You have made a PR to the color :boom: . Wait for your submission to be accepted and your PR to be merged.
+**16.** Woohoo! You have made a PR to the Metaxa :boom: . Wait for your submission to be accepted and your PR to be merged.
 
 **Thank you for your interest in contributing to our Repo!🏼**
 
