@@ -15,7 +15,7 @@ ${chalk.yellowBright.bold("Command: ")}
 )}
 
 ${chalk.yellowBright.bold("Argument Details: ")}
-  ${chalk.green("file_path")} : full or absolute path of file [mandatory*]
+  ${chalk.green("file_path")} : full or absolute path of file (only .txt supported) [mandatory*]
   ${chalk.green("delay")} : delay between two words in milliseconds
 
 ${chalk.yellowBright.bold("Options: ")}
