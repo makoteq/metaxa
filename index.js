@@ -8,7 +8,7 @@ import projector from "./lib/engine.js";
 const fileRead = async (fileName) => {
   const fileData = await fs.readFile(fileName, "utf8");
   return fileData;
-}
+};
 
 (async () => {
   let [command, filename, delay] = process.argv.slice(2);
@@ -22,7 +22,9 @@ const fileRead = async (fileName) => {
   )}
   
   ${chalk.yellowBright.bold("Argument Details: ")}
-    ${chalk.green("file_path")} : full or absolute path of file (only .txt supported) [mandatory*]
+    ${chalk.green(
+      "file_path"
+    )} : full or absolute path of file (only .txt supported) [mandatory*]
     ${chalk.green("delay")} : delay between two words in milliseconds
   
   ${chalk.yellowBright.bold("Options: ")}
@@ -45,7 +47,7 @@ const fileRead = async (fileName) => {
 
     case "-version":
     case "-v":
-      let rawdata = await fileRead('./package.json');
+      let rawdata = await fileRead("./package.json");
       let pjson = JSON.parse(rawdata);
       console.log(pjson.version);
       break;
@@ -56,12 +58,9 @@ const fileRead = async (fileName) => {
           const data = await fileRead(filename);
           projector(
             data,
-            delay != undefined && Number.isInteger(Number(delay))
-              ? delay
-              : 500
+            delay != undefined && Number.isInteger(Number(delay)) ? delay : 500
           );
-        }
-        catch (err) {
+        } catch (err) {
           console.log(chalk.white.bgRed.bold("\nSomething went wrong..."));
           console.log(
             `\n${chalk.yellowBright.bold("Error")}: ${chalk.red(err.message)}`
@@ -76,4 +75,4 @@ const fileRead = async (fileName) => {
 
       break;
   }
-})()
+})();
