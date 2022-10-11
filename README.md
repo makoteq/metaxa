@@ -16,7 +16,7 @@ metaxa start <path> <delay>
 npx metaxa start <path> <delay>
 ```
 _where < path > is a path to your .txt file with text to read
-and < delay > is how much milliseconds are between words_
+and < delay > is the speed of the words in WPM_
 ## :raised_hands: Contributing 
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)</br></br>
 **If you like the project make sure to hit :star:**
