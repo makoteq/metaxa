@@ -7,17 +7,16 @@ import chalk from "chalk";
 let args = process.argv.slice(2);
 
 const usage = `
-Command : 
-  start <file_path> [<delay>]
-    Show text from file in <file_path> with delay between words in <delay> (default 500ms)
+${chalk.yellowBright.bold("Command: ")}
+  ${chalk.green("start")} ${chalk.cyan("<file_path> [<delay>]")} : "Show text from file in <file_path> with delay between words in <delay>" ${chalk.cyan("(default 500ms)")}
 
-Argument Details :
-  file_path : full or absolute path of file [mandatory*]
-  delay : delay between two words in milliseconds
+${chalk.yellowBright.bold("Argument Details: ")}
+  ${chalk.green("file_path")} : full or absolute path of file [mandatory*]
+  ${chalk.green("delay")} : delay between two words in milliseconds
 
-Options :
-  -h, --help : show help
-  -v, --version : show version
+${chalk.yellowBright.bold("Options: ")}
+  ${chalk.green("-h, --help")} : show help
+  ${chalk.green("-v, --version")} : show version
 `
 
 switch (args[0]) {
@@ -27,7 +26,7 @@ switch (args[0]) {
     break;
   case "-help":
   case "-h":
-    console.log(chalk.cyan(usage));
+    console.log(usage);
     break;
   case "-version":
   case "-v":
@@ -39,7 +38,9 @@ switch (args[0]) {
     if (args[1] && path.extname(args[1]) == ".txt") {
       fs.readFile(args[1], "utf8", function (err, data) {
         if (err) {
-          throw err;
+          console.log(chalk.white.bgRed.bold("\nSomething went wrong..."))
+          console.log(`\n${chalk.yellowBright.bold('Error')}: ${chalk.red(err.message)}`);
+          return;
         }
         projector(
           data,
@@ -48,7 +49,7 @@ switch (args[0]) {
             : 500
         );
       });
-    } else console.log("You need to specify proper path");
+    } else console.log(`\n${chalk.yellowBright.bold('Error')}: ${chalk.red("You need to specify proper path")}`);
 
     break;
 }
