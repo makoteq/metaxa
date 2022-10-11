@@ -15,7 +15,7 @@ git clone https://github.com/<your_user_name>/makoteq/metaxa.git
 **3.** Navigate to the project directory :file_folder: .
 
 ```
-cd color
+cd metaxa
 ```
 
 **4.** Add a reference(remote) to the original repository.
