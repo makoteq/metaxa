@@ -9,11 +9,11 @@ npm i -g metaxa
 ```
 ## :electric_plug: Usage 
 ``` bash
-metaxa <path> <delay>
+metaxa start <path> <delay>
 ```
 **or**
 ``` bash
-npx metaxa <path> <delay>
+npx metaxa start <path> <delay>
 ```
 _where < path > is a path to your .txt file with text to read
 and < delay > is how much milliseconds are between words_
