@@ -18,14 +18,14 @@ const fileRead = async (fileName) => {
     ${chalk.green("start")} ${chalk.cyan(
     "<file_path> [<delay>]"
   )} : "Show text from file in <file_path> with delay between words in <delay>" ${chalk.cyan(
-    "(default 500ms)"
+    "(default 250WPM)"
   )}
   
   ${chalk.yellowBright.bold("Argument Details: ")}
     ${chalk.green(
       "file_path"
     )} : full or absolute path of file (only .txt supported) [mandatory*]
-    ${chalk.green("delay")} : delay between two words in milliseconds
+    ${chalk.green("delay")} : delay between two words in WPM
   
   ${chalk.yellowBright.bold("Options: ")}
     ${chalk.green("-h, --help")} : show help
@@ -58,7 +58,7 @@ const fileRead = async (fileName) => {
           const data = await fileRead(filename);
           projector(
             data,
-            delay != undefined && Number.isInteger(Number(delay)) ? delay : 500
+            delay != undefined && Number.isInteger(Number(delay)) ? 60000 / delay : 60000 / 250
           );
         } catch (err) {
           console.log(chalk.white.bgRed.bold("\nSomething went wrong..."));
