@@ -18,8 +18,9 @@ npx metaxa <path> <delay>
 _where < path > is a path to your .txt file with text to read
 and < delay > is how much milliseconds are between words_
 
-## :film_projector: Demo 
-![2022-10-11-13-34-02](https://user-images.githubusercontent.com/54977705/195080060-b1b67c79-d4cb-49e2-a7bc-32bbaf51ca17.gif)
+## :film_projector: See it in action!
+![metaxa-demo](https://user-images.githubusercontent.com/54977705/195251134-3b560b51-fd65-4e3f-9841-546a75ecd27e.gif)
+
 
 
 
