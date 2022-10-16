@@ -13,23 +13,20 @@ const fileRead = async (fileName) => {
 (async () => {
   let [command, filename, delay] = process.argv.slice(2);
 
-  const usage = `
-  ${chalk.yellowBright.bold("Command: ")}
-    ${chalk.green("start")} ${chalk.cyan(
+  const usage = `${chalk.yellowBright.bold("Command: ")}
+  ${chalk.green("start")} ${chalk.cyan(
     "<file_path> [<delay>]"
   )} : "Show text from file in <file_path> with delay between words in <delay>" ${chalk.cyan(
     "(default 250WPM)"
   )}
-  
-  ${chalk.yellowBright.bold("Argument Details: ")}
-    ${chalk.green(
-      "file_path"
-    )} : full or absolute path of file (only .txt supported) [mandatory*]
-    ${chalk.green("delay")} : delay between two words in WPM
-  
-  ${chalk.yellowBright.bold("Options: ")}
-    ${chalk.green("-h, --help")} : show help
-    ${chalk.green("-v, --version")} : show version
+${chalk.yellowBright.bold("Argument Details: ")}
+  ${chalk.green(
+    "file_path"
+  )} : full or absolute path of file (only .txt supported) [mandatory*]
+  ${chalk.green("delay")} : delay between two words in WPM
+${chalk.yellowBright.bold("Options: ")}
+  ${chalk.green("-h, --help")} : show help
+  ${chalk.green("-v, --version")} : show version
   `;
 
   switch (command) {
@@ -58,7 +55,9 @@ const fileRead = async (fileName) => {
           const data = await fileRead(filename);
           projector(
             data,
-            delay != undefined && Number.isInteger(Number(delay)) ? 60000 / delay : 60000 / 250
+            delay != undefined && Number.isInteger(Number(delay))
+              ? 60000 / delay
+              : 60000 / 250
           );
         } catch (err) {
           console.log(chalk.white.bgRed.bold("\nSomething went wrong..."));
