@@ -13,13 +13,13 @@ const fileRead = async (fileName) => {
 // Function to return the words of the data provided.
 const fileWords = async (data) => {
   const words = data.split(" ").length;
-  console.log(`${chalk.yellowBright.bold("Number of words: " + words)}`);
+  console.log(`${chalk.yellowBright.bold("Number of words: ")}` + `${chalk.green(words)}`);
 };
 
 // Function to return the sentences of the data provided.
 const fileSentences = async (data) => {
   const sentences = data.match(/[\w|\)][.?!](\s|$)/g).length;
-  console.log(`${chalk.yellowBright.bold("Number of sentences: " + sentences)}`);
+  console.log(`${chalk.yellowBright.bold("Number of sentences: ")}` + `${chalk.green(sentences)}`);
 };
 
 (async () => {
@@ -32,7 +32,7 @@ const fileSentences = async (data) => {
   )}
   ${chalk.green("stats")} ${chalk.cyan(
     "<file_path>"
-  )} : "Show number of words, sentences, and absolute path of file in <file_path>"
+  )} : "Show number of words, sentences, and absolute path of file in ${chalk.cyan("<file_path>")}"
 ${chalk.yellowBright.bold("Argument Details: ")}
   ${chalk.green(
     "file_path"
