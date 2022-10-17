@@ -10,15 +10,29 @@ const fileRead = async (fileName) => {
   return fileData;
 };
 
+// Function to return the words of the data provided.
+const fileWords = async (data) => {
+  const words = data.split(" ").length;
+  console.log(`${chalk.yellowBright.bold("Number of words: ")}` + `${chalk.green(words)}`);
+};
+
+// Function to return the sentences of the data provided.
+const fileSentences = async (data) => {
+  const sentences = data.match(/[\w|\)][.?!](\s|$)/g).length;
+  console.log(`${chalk.yellowBright.bold("Number of sentences: ")}` + `${chalk.green(sentences)}`);
+};
+
 (async () => {
   let [command, filename, delay] = process.argv.slice(2);
-
-  const usage = `${chalk.yellowBright.bold("Command: ")}
+  const usage = `${chalk.yellowBright.bold("Commands: ")}
   ${chalk.green("start")} ${chalk.cyan(
     "<file_path> [<delay>]"
   )} : "Show text from file in <file_path> with delay between words in <delay>" ${chalk.cyan(
     "(default 250WPM)"
   )}
+  ${chalk.green("stats")} ${chalk.cyan(
+    "<file_path>"
+  )} : "Show number of words, sentences, and absolute path of file in ${chalk.cyan("<file_path>")}"
 ${chalk.yellowBright.bold("Argument Details: ")}
   ${chalk.green(
     "file_path"
@@ -71,7 +85,29 @@ ${chalk.yellowBright.bold("Options: ")}
             "You need to specify proper path"
           )}`
         );
+      break;
 
+    case "stats":
+      if (filename && path.extname(filename) == ".txt") {
+        try {
+          const data = await fileRead(filename);
+          // Call functions to read number of words and sentences.
+          fileWords(data);
+          fileSentences(data);
+          // Get and display the absolute path of file.
+          console.log(`${chalk.blueBright.bold("The absolute path is: " + path.resolve(filename))}`);
+        } catch (err) {
+          console.log(chalk.white.bgRed.bold("\nSomething went wrong..."));
+          console.log(
+            `\n${chalk.yellowBright.bold("Error")}: ${chalk.red(err.message)}`
+          );
+        }
+      } else
+        console.log(
+          `\n${chalk.yellowBright.bold("Error")}: ${chalk.red(
+            "You need to specify proper path"
+          )}`
+        );
       break;
   }
 })();
