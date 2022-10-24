@@ -33,6 +33,11 @@ const fileSentences = async (data) => {
   ${chalk.green("stats")} ${chalk.cyan(
     "<file_path>"
   )} : "Show number of words, sentences, and absolute path of file in ${chalk.cyan("<file_path>")}"
+  ${chalk.green("read")} ${chalk.cyan(
+    "[<delay>] <text>"
+  )} : "Show text from text wrapped with '' or "" in <text>, with delay between words in <delay>" ${chalk.cyan(
+    "(default 250WPM)"
+  )}
 ${chalk.yellowBright.bold("Argument Details: ")}
   ${chalk.green(
     "file_path"
@@ -86,6 +91,37 @@ ${chalk.yellowBright.bold("Options: ")}
           )}`
         );
       break;
+
+    case "read":
+        try {    
+          let data;
+          if (delay === undefined) {
+            data = filename;
+          }else if (!isNaN(delay)) {
+            data = filename;
+            delay = 250;     
+          }else if (!isNaN(filename)){
+            data = delay;
+            delay = filename;
+          }else{
+            data = filename;
+            delay = 250;
+          }
+          
+          projector(
+            data,
+            delay != undefined && Number.isInteger(Number(delay))
+              ? 60000 / delay
+              : 60000 / 250
+          );
+        } catch (err) {
+          console.log(chalk.white.bgRed.bold("\nSomething went wrong..."));
+          console.log(
+            `\n${chalk.yellowBright.bold("Error")}: ${chalk.red(err.message)}`
+          );
+        }
+      
+    break;
 
     case "stats":
       if (filename && path.extname(filename) == ".txt") {
