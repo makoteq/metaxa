@@ -63,14 +63,14 @@ ${chalk.yellowBright.bold('Options: ')}
       show('METAXA', usage);
       break;
 
-    case '-help':
+    case '--help':
     case '-h':
       console.log(usage);
       break;
 
-    case '-version':
+    case '--version':
     case '-v':
-      let rawdata = await fileRead('./package.json');
+      let rawdata = await fileRead(new URL('./package.json', import.meta.url));
       let pjson = JSON.parse(rawdata);
       console.log(pjson.version);
       break;
