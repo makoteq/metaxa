@@ -31,7 +31,9 @@ const fileSentences = async (data) => {
   const usage = `${chalk.yellowBright.bold('Commands: ')}
   ${chalk.green('start')} ${chalk.cyan(
     '<file_path> [<delay>]'
-  )} : "Show text from file in ${chalk.cyan('<file_path>')} with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
+  )} : "Show text from file in ${chalk.cyan(
+    '<file_path>'
+  )} with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
     '(default 250WPM)'
   )}
   ${chalk.green('stats')} ${chalk.cyan(
@@ -41,7 +43,9 @@ const fileSentences = async (data) => {
   )}"
   ${chalk.green('read')} ${chalk.cyan(
     '<text> [<delay>]'
-  )} : "Show text from text wrapped with '' or "" in ${chalk.cyan('<text>')}, with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
+  )} : "Show text from text wrapped with '' or "" in ${chalk.cyan(
+    '<text>'
+  )}, with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
     '(default 250WPM)'
   )}
 ${chalk.yellowBright.bold('Argument Details: ')}
@@ -56,10 +60,7 @@ ${chalk.yellowBright.bold('Options: ')}
 
   switch (command) {
     default:
-      show(
-        'METAXA',
-        'Run - metaxa start <path> to begin reading\nIf you want to know more, explore help section by\nmetaxa -h or metaxa --help'
-      );
+      show('METAXA', usage);
       break;
 
     case '-help':
