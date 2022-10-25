@@ -31,7 +31,7 @@ const fileSentences = async (data) => {
   const usage = `${chalk.yellowBright.bold('Commands: ')}
   ${chalk.green('start')} ${chalk.cyan(
     '<file_path> [<delay>]'
-  )} : "Show text from file in <file_path> with delay between words in <delay>" ${chalk.cyan(
+  )} : "Show text from file in ${chalk.cyan('<file_path>')} with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
     '(default 250WPM)'
   )}
   ${chalk.green('stats')} ${chalk.cyan(
@@ -40,8 +40,8 @@ const fileSentences = async (data) => {
     '<file_path>'
   )}"
   ${chalk.green('read')} ${chalk.cyan(
-    '[<delay>] <text>'
-  )} : "Show text from text wrapped with '' or "" in <text>, with delay between words in <delay>" ${chalk.cyan(
+    '<text> [<delay>]'
+  )} : "Show text from text wrapped with '' or "" in ${chalk.cyan('<text>')}, with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
     '(default 250WPM)'
   )}
 ${chalk.yellowBright.bold('Argument Details: ')}
@@ -100,20 +100,7 @@ ${chalk.yellowBright.bold('Options: ')}
 
     case 'read':
       try {
-        let data;
-        if (delay === undefined) {
-          data = filename;
-        } else if (!isNaN(delay)) {
-          data = filename;
-          delay = 250;
-        } else if (!isNaN(filename)) {
-          data = delay;
-          delay = filename;
-        } else {
-          data = filename;
-          delay = 250;
-        }
-
+        const data = filename;
         projector(
           data,
           delay != undefined && Number.isInteger(Number(delay))
