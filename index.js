@@ -14,7 +14,7 @@ const fileRead = async (fileName) => {
 const fileWords = async (data) => {
   const words = data.split(' ').length;
   console.log(
-    `${chalk.yellowBright.bold('Number of words: ')}` + `${chalk.green(words)}`
+    `${chalk.yellowBright.bold('Number of words: ')}` + `${chalk.yellowBright(words)}`
   );
 };
 
@@ -23,39 +23,39 @@ const fileSentences = async (data) => {
   const sentences = data.match(/[\w|\)][.?!](\s|$)/g).length;
   console.log(
     `${chalk.yellowBright.bold('Number of sentences: ')}` +
-      `${chalk.green(sentences)}`
+      `${chalk.yellowBright(sentences)}`
   );
 };
 (async () => {
   let [command, filename, delay] = process.argv.slice(2);
   const usage = `${chalk.yellowBright.bold('Commands: ')}
-  ${chalk.green('start')} ${chalk.cyan(
+  ${chalk.yellowBright('start')} ${chalk.yellowBright(
     '<file_path> [<delay>]'
-  )} : "Show text from file in ${chalk.cyan(
+  )} : "Show text from file in ${chalk.white(
     '<file_path>'
-  )} with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
+  )} with delay between words in ${chalk.white('<delay>')}" ${chalk.white(
     '(default 250WPM)'
   )}
-  ${chalk.green('stats')} ${chalk.cyan(
+  ${chalk.yellowBright('stats')} ${chalk.yellowBright(
     '<file_path>'
-  )} : "Show number of words, sentences, and absolute path of file in ${chalk.cyan(
+  )} : "Show number of words, sentences, and absolute path of file in ${chalk.white(
     '<file_path>'
   )}"
-  ${chalk.green('read')} ${chalk.cyan(
+  ${chalk.yellowBright('read')} ${chalk.white(
     '<text> [<delay>]'
-  )} : "Show text from text wrapped with '' or "" in ${chalk.cyan(
+  )} : "Show text from text wrapped with '' or "" in ${chalk.white(
     '<text>'
-  )}, with delay between words in ${chalk.cyan('<delay>')}" ${chalk.cyan(
+  )}, with delay between words in ${chalk.white('<delay>')}" ${chalk.white(
     '(default 250WPM)'
   )}
 ${chalk.yellowBright.bold('Argument Details: ')}
-  ${chalk.green(
+  ${chalk.yellowBright(
     'file_path'
   )} : full or absolute path of file (only .txt supported) [mandatory*]
-  ${chalk.green('delay')} : delay between two words in WPM
+  ${chalk.yellowBright('delay')} : delay between two words in WPM
 ${chalk.yellowBright.bold('Options: ')}
-  ${chalk.green('-h, --help')} : show help
-  ${chalk.green('-v, --version')} : show version
+  ${chalk.yellowBright('-h, --help')} : show help
+  ${chalk.yellowBright('-v, --version')} : show version
   `;
 
   switch (command) {
@@ -126,7 +126,7 @@ ${chalk.yellowBright.bold('Options: ')}
           fileSentences(data);
           // Get and display the absolute path of file.
           console.log(
-            `${chalk.blueBright.bold(
+            `${chalk.yellowBright.bold(
               'The absolute path is: ' + path.resolve(filename)
             )}`
           );
