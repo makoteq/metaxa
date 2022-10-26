@@ -14,7 +14,7 @@ const fileRead = async (fileName) => {
 const fileWords = async (data) => {
   const words = data.split(' ').length;
   console.log(
-    `${chalk.yellowBright.bold('Number of words: ')}` + `${chalk.yellowBright(words)}`
+    `${chalk.yellowBright.bold('Number of words: ')}` + `${chalk.whiteBright(words)}`
   );
 };
 
@@ -23,7 +23,7 @@ const fileSentences = async (data) => {
   const sentences = data.match(/[\w|\)][.?!](\s|$)/g).length;
   console.log(
     `${chalk.yellowBright.bold('Number of sentences: ')}` +
-      `${chalk.yellowBright(sentences)}`
+      `${chalk.whiteBright(sentences)}`
   );
 };
 (async () => {
@@ -31,21 +31,21 @@ const fileSentences = async (data) => {
   const usage = `${chalk.yellowBright.bold('Commands: ')}
   ${chalk.yellowBright('start')} ${chalk.yellowBright(
     '<file_path> [<delay>]'
-  )} : "Show text from file in ${chalk.white(
+  )} : "Show text from file in ${chalk.whiteBright(
     '<file_path>'
-  )} with delay between words in ${chalk.white('<delay>')}" ${chalk.white(
+  )} with delay between words in ${chalk.whiteBright('<delay>')}" ${chalk.whiteBright(
     '(default 250WPM)'
   )}
   ${chalk.yellowBright('stats')} ${chalk.yellowBright(
     '<file_path>'
-  )} : "Show number of words, sentences, and absolute path of file in ${chalk.white(
+  )} : "Show number of words, sentences, and absolute path of file in ${chalk.whiteBright(
     '<file_path>'
   )}"
-  ${chalk.yellowBright('read')} ${chalk.white(
+  ${chalk.yellowBright('read')} ${chalk.yellowBright(
     '<text> [<delay>]'
-  )} : "Show text from text wrapped with '' or "" in ${chalk.white(
+  )} : "Show text from text wrapped with '' or "" in ${chalk.whiteBright(
     '<text>'
-  )}, with delay between words in ${chalk.white('<delay>')}" ${chalk.white(
+  )}, with delay between words in ${chalk.whiteBright('<delay>')}" ${chalk.whiteBright(
     '(default 250WPM)'
   )}
 ${chalk.yellowBright.bold('Argument Details: ')}
@@ -86,7 +86,7 @@ ${chalk.yellowBright.bold('Options: ')}
               : 60000 / 250
           );
         } catch (err) {
-          console.log(chalk.white.bgRed.bold('\nSomething went wrong...'));
+          console.log(chalk.whiteBright.bgRed.bold('\nSomething went wrong...'));
           console.log(
             `\n${chalk.yellowBright.bold('Error')}: ${chalk.red(err.message)}`
           );
@@ -109,7 +109,7 @@ ${chalk.yellowBright.bold('Options: ')}
             : 60000 / 250
         );
       } catch (err) {
-        console.log(chalk.white.bgRed.bold('\nSomething went wrong...'));
+        console.log(chalk.whiteBright.bgRed.bold('\nSomething went wrong...'));
         console.log(
           `\n${chalk.yellowBright.bold('Error')}: ${chalk.red(err.message)}`
         );
@@ -127,11 +127,11 @@ ${chalk.yellowBright.bold('Options: ')}
           // Get and display the absolute path of file.
           console.log(
             `${chalk.yellowBright.bold(
-              'The absolute path is: ' + path.resolve(filename)
+              'The absolute path is: ')} ${chalk.whiteBright(path.resolve(filename)
             )}`
           );
         } catch (err) {
-          console.log(chalk.white.bgRed.bold('\nSomething went wrong...'));
+          console.log(chalk.whiteBright.bgRed.bold('\nSomething went wrong...'));
           console.log(
             `\n${chalk.yellowBright.bold('Error')}: ${chalk.red(err.message)}`
           );
