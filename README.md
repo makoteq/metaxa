@@ -12,11 +12,11 @@ npm i -g metaxa
 ## :electric_plug: Usage 
 1. Show text from file in < file_path > with delay between words in < delay > (default 250WPM)
 ``` bash
-metaxa start <path> <delay>
+metaxa start <path> [<delay>]
 ```
 **or**
 ``` bash
-npx metaxa start <path> <delay>
+npx metaxa start <path> [<delay>]
 ```
 _where < path > is a path to your .txt file with text to read and < delay > is the speed of the words in words per minute (WPM)_
 
