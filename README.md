@@ -25,7 +25,7 @@ _where < path > is a path to your .txt file with text to read and < delay > is t
 metaxa stats <file_path>
 ```
 3. Show text from text wrapped with '' or "" in < text >, with delay between words in < delay > (default 250WPM)
-``` bash
+``` cmd
 metaxa read <text> [<delay>] 
 ```
 ## :film_projector: See it in action!
