@@ -2,7 +2,7 @@
 CLI made for fast reading, showing only one word at a time.
 
 ## :point_down: demo
-![demo](https://user-images.githubusercontent.com/42750440/196064400-caa43b64-6211-4ccc-b2b2-1c09934a09de.png)
+![demo](https://user-images.githubusercontent.com/37949904/198865452-bbc3437d-e4bf-4680-8d55-2c6b583e3efc.png)
 
 ## :floppy_disk: Installation
 ``` bash
