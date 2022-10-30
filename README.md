@@ -34,5 +34,10 @@ metaxa read <text> [<delay>]
 ## :raised_hands: Contributing 
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)</br></br>
 **If you like the project make sure to hit :star:**
+## Thanks to these amazing people
+<a href="https://github.com/makoteq/metaxa/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=makoteq/metaxa&&max=817" />
+</a>
+
 ## :page_with_curl: License 
 This project is under [MIT](https://github.com/makoteq/metaxa/blob/main/LICENSE) license
