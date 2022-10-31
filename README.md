@@ -35,7 +35,7 @@ metaxa read <text> [<delay>]
 Contributions are welcome, check [Issues!](https://github.com/makoteq/metaxa/issues)</br></br>
 **If you like the project make sure to hit :star:**
 ## ✨ Contributors 
-Chcekout our [Contributors](https://github.com/makoteq/metaxa/blob/master/CONTRIBUTORS.md)
+Checkout our [Contributors](https://github.com/makoteq/metaxa/blob/master/CONTRIBUTORS.md)
 
 ## :page_with_curl: License 
 This project is under [MIT](https://github.com/makoteq/metaxa/blob/main/LICENSE) license
