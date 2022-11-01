@@ -1,5 +1,6 @@
 # metaxa :cocktail:
-<img alt="npm" src="https://img.shields.io/npm/dm/metaxa?style=plastic">
+<img alt="npm" src="https://img.shields.io/npm/dm/metaxa?style=plastic"> <img alt="NPM" src="https://img.shields.io/npm/l/metaxa?style=plastic">
+
 CLI made for fast reading, showing only one word at a time.
 
 ## :point_down: demo
